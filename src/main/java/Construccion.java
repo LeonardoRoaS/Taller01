@@ -28,7 +28,7 @@ public class Construccion extends Permiso {
 	}
 
 	public String getTipo() {
-		throw new UnsupportedOperationException();
+		return "Construccion";
 	}
 
 	public void costoConstruccion() {
@@ -36,10 +36,13 @@ public class Construccion extends Permiso {
 	}
 
 	public void mostrarDetallesPermiso() {
-		throw new UnsupportedOperationException();
+		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "this.costoConstruccion();
 	}
 
-	public Construccion(double nMetrosCuadrados, String ubicacion, String tipoConstruccion) {
-		throw new UnsupportedOperationException();
+	public Construccion(int identificador, double nMetrosCuadrados, String ubicacion, String tipoConstruccion, Cliente cliente) {
+		super(identificador, cliente);
+		this.nMetrosCuadrados = nMetrosCuadrados;
+		this.ubicacion = ubicacion;
+		this.tipoConstruccion = tipoConstruccion;
 	}
 }

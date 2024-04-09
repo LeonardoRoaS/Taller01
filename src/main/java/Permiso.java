@@ -1,8 +1,10 @@
+import java.util.Date;
+
 public abstract class Permiso {
+	private int identificador;
 	private Date fechaEmision;
 	private Date fechaVencimiento;
 	private double costo;
-	private int identificador;
 	public Cliente cliente;
 
 	public abstract String getTipo();
@@ -39,5 +41,13 @@ public abstract class Permiso {
 
 	public void setIdentificador(int identificador) {
 		this.identificador = identificador;
+	}
+
+	public Permiso(int identificador, Cliente cliente) {
+		this.identificador = identificador;
+		this.fechaEmision = new Date();
+		this.fechaVencimiento = new Date();
+		this.costo = 1000;
+		this.cliente = cliente;
 	}
 }

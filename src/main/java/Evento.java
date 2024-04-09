@@ -28,11 +28,14 @@ public class Evento extends Permiso {
 	}
 
 	public String getTipo() {
-		throw new UnsupportedOperationException();
+		return "Evento Especial";
 	}
 
-	public Evento(String tipoEvento, int nAsistentes, String seguridad) {
-		throw new UnsupportedOperationException();
+	public Evento(int identificador, String tipoEvento, int nAsistentes, String seguridad, Cliente cliente) {
+		super(identificador, cliente);
+		this.tipoEvento = tipoEvento;
+		this.nAsistentes = nAsistentes;
+		this.seguridad = seguridad;
 	}
 
 	public void costoEvento() {
@@ -40,6 +43,6 @@ public class Evento extends Permiso {
 	}
 
 	public void mostrarDetallesPermiso() {
-		throw new UnsupportedOperationException();
+		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "this.costoEvento();
 	}
 }

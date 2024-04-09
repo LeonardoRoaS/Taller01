@@ -28,18 +28,23 @@ public class Negocio extends Permiso {
 	}
 
 	public String getTipo() {
-		throw new UnsupportedOperationException();
+		return "Negocio";
 	}
 
 	public void costoNegocio() {
-		throw new UnsupportedOperationException();
+		double costoBase = super.getCosto();
+		double costoFinal = costoBase+(this.tamanioLocal*150000);
+		System.out.println("Costo Permiso Negocio: "+costoFinal);
 	}
 
 	public void mostrarDetallesPermiso() {
-		throw new UnsupportedOperationException();
+		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "this.costoNegocio();
 	}
 
-	public Negocio(double tamanioLoca, int nEmpleados, String tipoNegocio) {
-		throw new UnsupportedOperationException();
+	public Negocio(int identificador, double tamanioLocal, int nEmpleados, String tipoNegocio, Cliente cliente) {
+		super(identificador,cliente);
+		this.tamanioLocal = tamanioLocal;
+		this.nEmpleados = nEmpleados;
+		this.tipoNegocio = tipoNegocio;
 	}
 }

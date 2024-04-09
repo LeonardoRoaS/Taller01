@@ -20,4 +20,7 @@ public class Cliente {
 		throw new UnsupportedOperationException();
 	}
 
+	public Cliente(String nombre) {
+		throw new UnsupportedOperationException();
+	}
 }
