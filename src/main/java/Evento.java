@@ -28,7 +28,7 @@ public class Evento extends Permiso {
 	}
 
 	public String getTipo() {
-		return "Evento Especial";
+		return "Evento";
 	}
 
 	public Evento(int identificador, String tipoEvento, int nAsistentes, String seguridad, Cliente cliente) {
@@ -46,5 +46,6 @@ public class Evento extends Permiso {
 
 	public void mostrarDetallesPermiso() {
 		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "+this.costoEvento();
+		System.out.println(detallePermiso);;
 	}
 }

@@ -46,7 +46,7 @@ public abstract class Permiso {
 	public Permiso(int identificador, Cliente cliente) {
 		this.identificador = identificador;
 		this.fechaEmision = new Date();
-		this.fechaVencimiento = new Date();
+		this.fechaVencimiento = new Date(1000);
 		this.costo = 1000;
 		this.cliente = cliente;
 	}

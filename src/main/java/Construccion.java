@@ -39,6 +39,7 @@ public class Construccion extends Permiso {
 
 	public void mostrarDetallesPermiso() {
 		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "+this.costoConstruccion();
+		System.out.println(detallePermiso);;
 	}
 
 	public Construccion(int identificador, double nMetrosCuadrados, String ubicacion, String tipoConstruccion, Cliente cliente) {

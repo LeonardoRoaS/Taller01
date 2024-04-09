@@ -15,6 +15,8 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 
+
+
 	public Cliente(String nombre) {
 		this.nombre = nombre;
 	}

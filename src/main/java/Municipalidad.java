@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Municipalidad {
-	private ArrayList<Permiso> permisosRealizados;
+	private ArrayList<Permiso> permisosRealizados = new ArrayList<Permiso>();
 	public ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 
 
@@ -23,7 +23,21 @@ public class Municipalidad {
 		this.permisosRealizados.add(permiso);
 	}
 
-	public void mostrarPermisosRealizados(){
+	public void buscarPermiso(String tipoPermiso){
+		for (Permiso permiso : this.permisosRealizados){
+			if (permiso.getTipo().equalsIgnoreCase(tipoPermiso)){
+				permiso.mostrarDetallesPermiso();
+			}
+		}
+	}
 
+	public Cliente buscarCliente(String nombre){
+		//Buscar cliente por nombre y regresar el Cliente
+		for (Cliente cliente : this.clientes){
+			if (cliente.getNombre().equalsIgnoreCase(nombre)){
+				return cliente;
+			}
+		}
+		return null;
 	}
 }

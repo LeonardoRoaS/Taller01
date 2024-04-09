@@ -39,6 +39,7 @@ public class Negocio extends Permiso {
 
 	public void mostrarDetallesPermiso() {
 		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "+this.costoNegocio();
+		System.out.println(detallePermiso);;
 	}
 
 	public Negocio(int identificador, double tamanioLocal, int nEmpleados, String tipoNegocio, Cliente cliente) {
