@@ -1,18 +1,29 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Municipalidad {
-	private List<Permiso> permisosRealizados;
+	private ArrayList<Permiso> permisosRealizados;
 	public ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 
-	public List<Permiso> getPermisosRealizados() {
-		throw new UnsupportedOperationException();
+
+	public ArrayList<Permiso> getPermisosRealizados() {
+		return permisosRealizados;
 	}
 
-	public void setPermisosRealizados(List<Permiso> permisosRealizados) {
-		throw new UnsupportedOperationException();
+	public ArrayList<Cliente> getClientes() {
+		return clientes;
 	}
 
-	public void registrarClientes() {
-		throw new UnsupportedOperationException();
+	public void registrarClientes(Cliente cliente) {
+		this.clientes.add(cliente);
+	}
+
+	public void agregarPermisosRealizados(Permiso permiso, Cliente cliente){
+		cliente.getPermisos().add(permiso);
+		this.permisosRealizados.add(permiso);
+	}
+
+	public void mostrarPermisosRealizados(){
+
 	}
 }

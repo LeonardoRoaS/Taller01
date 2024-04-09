@@ -31,12 +31,14 @@ public class Construccion extends Permiso {
 		return "Construccion";
 	}
 
-	public void costoConstruccion() {
-		throw new UnsupportedOperationException();
+	public double costoConstruccion() {
+		double costoBase = super.getCosto();
+		double costoFinal = costoBase+(this.nMetrosCuadrados*150000);
+		return costoFinal;
 	}
 
 	public void mostrarDetallesPermiso() {
-		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "this.costoConstruccion();
+		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "+this.costoConstruccion();
 	}
 
 	public Construccion(int identificador, double nMetrosCuadrados, String ubicacion, String tipoConstruccion, Cliente cliente) {

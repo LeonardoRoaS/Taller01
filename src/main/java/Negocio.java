@@ -31,14 +31,14 @@ public class Negocio extends Permiso {
 		return "Negocio";
 	}
 
-	public void costoNegocio() {
+	public double costoNegocio() {
 		double costoBase = super.getCosto();
-		double costoFinal = costoBase+(this.tamanioLocal*150000);
-		System.out.println("Costo Permiso Negocio: "+costoFinal);
+		double costoFinal = costoBase+(this.tamanioLocal*150000)+(this.nEmpleados*20000);
+		return costoFinal;
 	}
 
 	public void mostrarDetallesPermiso() {
-		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "this.costoNegocio();
+		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "+this.costoNegocio();
 	}
 
 	public Negocio(int identificador, double tamanioLocal, int nEmpleados, String tipoNegocio, Cliente cliente) {

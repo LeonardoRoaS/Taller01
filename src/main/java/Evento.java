@@ -38,11 +38,13 @@ public class Evento extends Permiso {
 		this.seguridad = seguridad;
 	}
 
-	public void costoEvento() {
-		throw new UnsupportedOperationException();
+	public double costoEvento() {
+		double costoBase = super.getCosto();
+		double costoFinal = costoBase+((this.nAsistentes/100)*100000);
+		return costoFinal;
 	}
 
 	public void mostrarDetallesPermiso() {
-		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "this.costoEvento();
+		String detallePermiso = "Cliente :"+ super.cliente.getNombre()+", Tipo Permiso: "+this.getTipo()+", Fecha emision: "+super.getFechaEmision()+", Fecha Vencimiento: "+super.getFechaVencimiento()+", Costo: "+this.costoEvento();
 	}
 }
